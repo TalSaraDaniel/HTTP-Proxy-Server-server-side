@@ -1,0 +1,30 @@
+# HTTP Proxy and File Downloader
+
+This project is an HTTP proxy and file downloader written in C. The program fetches files from a given URL, saves them locally, and can optionally open them in a web browser.
+
+## Features
+
+- Fetch files from specified URLs
+- Save files locally
+- Option to open downloaded files in a web browser
+- Implements a thread pool for efficient request handling
+
+
+To run the proxy server and downloader, use the following command:
+./proxyServer
+
+### Options
+- `-u <URL>`: Specify the URL to download the file from.
+- `-o <filename>`: Specify the name to save the downloaded file as.
+- `-b`: Open the downloaded file in the default web browser after downloading.
+
+### Example
+Download a file and save it locally:
+./proxyServer -u http://example.com/file.txt -o file.txt
+Download a file and open it in the web browser:
+./proxyServer -u http://example.com/file.txt -o file.txt -b
+
+## Files
+- `proxyServer.c`: Main server implementation handling HTTP requests.
+- `threadpool.c`: Thread pool implementation for managing concurrent requests.
+- `Makefile`: Makefile to compile the project.
